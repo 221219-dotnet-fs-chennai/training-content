@@ -1,0 +1,14 @@
+## Commands used to create this solution
+- mkdir 03
+- cd 03/
+- mkdir RestaurantReviews
+- cd RestaurantReviews/
+- dotnet new console -o RestaurantReviewsConsole
+- dotnet new classlib -o RestaurantReviewsLib
+- dotnet new classlib -o RestaurantReviewsData
+- dotnet new xunit -o RestaurantReviewsTest
+- dotnet new sln
+- dotnet sln add RestaurantReviewsConsole/RestaurantReviewsConsole.csproj
+- dotnet sln add RestaurantReviewsLib/RestaurantReviewsLib.csproj  
+- dotnet sln add RestaurantReviewsData/RestaurantReviewsData.csproj
+- dotnet sln add RestaurantReviewsTest/RestaurantReviewsTest.csproj 

@@ -10,7 +10,7 @@ public class Person
         return $"Id - {Id}\nName - {Name}\nAge - {Age}";
     }
 
-    public Dictionary<string,Person> GetPersons(){
+    public IEnumerable<string,Person> GetPersons(){
         Dictionary<string,Person> persons = new Dictionary<string, Person>();
             persons.Add("RAC1B",new Person(){Id=1, Name="Emily", Age=30});
             persons.Add("YUB7B",new Person(){Id=2, Name="Carolyn", Age=23});
