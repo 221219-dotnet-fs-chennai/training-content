@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public interface IFileRepo
+    public interface IRepo
     {
         /// <summary>
         /// Add the Restaurant into the Restaurant.json File

@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace Data
 {
-    public class FileRepo : IFileRepo
+    public class FileRepo : IRepo
     {
         private string _filePath = "../../../../Data/FileDatabase/";
         private string _jsonString;

@@ -4,7 +4,7 @@ namespace UI_Console
     internal class AddRestaurantMenu : IMenu
     {
         private static Restaurant newRestaurant = new Restaurant();
-        IFileRepo repo = new FileRepo();
+        IRepo repo = new FileRepo();
         public void Display()
         {
             Console.WriteLine("Enter Pokemon information");

@@ -33,7 +33,6 @@ namespace Data
         public string Email { get; set; }
         public string Website { get; set; }
         public string ZipCode { get; set; }
-
         public override string ToString()
         {
             return $"{Id} {Name} {OpenTime}-{CloseTime}, {Email}, {Phone}, {Website}, {ZipCode} ";

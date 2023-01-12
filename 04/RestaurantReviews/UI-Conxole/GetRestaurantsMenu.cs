@@ -9,7 +9,7 @@ namespace UI_Console
 {
     internal class GetRestaurantsMenu : IMenu
     {
-        IFileRepo repo = new FileRepo();
+        IRepo repo = new SqlRepo();
         public void Display()
         {
             Console.WriteLine("Please select an option to filter the Restaurant reviews database");
