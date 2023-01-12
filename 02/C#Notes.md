@@ -16,17 +16,18 @@
 # Common Language Infrastructure (CLI)
 * This is the  infrastructure of .NET on how it is able to write your application in numerous programming language beyond C# and for your application to be run on any operating system
 ## General structure of the .Net
-* .Net
-    * CLR
-        * CLI
+* .Net - when you instal .Net sdk you get
+    * **CLR**
+        * CLI - Common Language Infrastructure (**.Net Languages**)
             * CLS
             * CTS
-        * Garbage Collector
-        * JIT Compiler
-    * Libraries
+        * Garbage Collector - dispose unused objects of a program
+        * JIT Compiler - to compile your IL to machine native code (binary code), its very fast
+    * **Libraries**
+    
 ## CLS
 * Common Language Specification
-* It has defined rules and restrictions that every langauge must follow for it to be able to run the .NET framework
+* It has defined rules and restrictions that every langauge must follow for it to be able to run the .NET framework. Eg rules like Arrays index should start from 0, the langauges should be OOP.
 * Essentially a standardization to make sure a language won't do anything that will make it incompatible with .NET framework
 ## [CTS](https://www.c-sharpcorner.com/blogs/what-are-cts-and-cls-in-net)
 * Common Type System
@@ -48,7 +49,7 @@
     * JIT compilation (Just-inTime compilation that involves compliation during execution for optimization)
         * It just means any new compile code gets executed immediately, it doesn't have to wait until your entire code has been compiled to run your app
     * Exception handling support
-    * Security
+    * Security against vulnerable code, like you cannot run a malicious .net code in your machine taken from internet.
 
 # Application Architecture
 * A way for us to group our code just like how we group our files by putting them in folders
@@ -367,3 +368,4 @@ Console.WriteLine("==== Boxing and Unboxing ====");
 ## References
 - [Basics of C# Programming](https://learn.microsoft.com/en-gb/users/dotnet/collections/yz26f8y64n7k07?WT.mc_id=dotnet-35129-website&source=docs)
 - [Practise C#](https://dotnetcademy.net/Learn/2047/Pages/1)
+- [OOPS explained by medium.com](https://medium.com/@cancerian0684/what-are-four-basic-principles-of-object-oriented-programming-645af8b43727)

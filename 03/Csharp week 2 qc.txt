@@ -1,0 +1,36 @@
+.NET Overview
+    what is .net
+what are some qualities of c# as a programming language
+    object-oriented, statically-typed/type-safe, managed/garbage-collection, unified type system, exception handling
+
+framework overview
+    what is assembly
+        library/application
+OOP concepts
+    four pillars
+
+value type vs reference type
+    user-defined value types = struct
+a property vs a field
+class, interface, struct, enum
+data types
+type casting
+    any rules with type casting? can you cast anything to anything?
+    what is an issue to watch out for when casting numeric types?
+    if you make an invalid cast in your code, do you get a compile error or a runtime exception?
+        (could be either)
+control statements
+    what is a foreach statement? when would you want to use one?
+        if you wrote you own collection class, and wanted to use it in a foreach statement
+        what would you need to do?
+            (implement IEnumerable. important interface to recognize because of LINQ, very useful set of extension methods to IEnumerable)
+            what is the yield keyword for?
+                ()
+access modifiers public, protected internal, internal, protected, private
+extended modifiers
+exception handling
+    try, catch, finally, throw
+ if you put a string into a list of ints, do you get a compile error or a runtime error?
+        compile - generics are enforced at compile time
+collections
+    list, stack, queue, linkedlist, dictionary,
