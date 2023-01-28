@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{DC9FDF83-9E5D-4C85-9820-CAAEDF7FA08C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTest", "LogicTest\LogicTest.csproj", "{3EB7DC3F-A195-4B1A-AD60-DE395AB74C9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC9FDF83-9E5D-4C85-9820-CAAEDF7FA08C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9FDF83-9E5D-4C85-9820-CAAEDF7FA08C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9FDF83-9E5D-4C85-9820-CAAEDF7FA08C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9FDF83-9E5D-4C85-9820-CAAEDF7FA08C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB7DC3F-A195-4B1A-AD60-DE395AB74C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB7DC3F-A195-4B1A-AD60-DE395AB74C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB7DC3F-A195-4B1A-AD60-DE395AB74C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB7DC3F-A195-4B1A-AD60-DE395AB74C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4F5281E-E842-4886-8F1E-084AE5A31983}
+	EndGlobalSection
+EndGlobal

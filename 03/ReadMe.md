@@ -64,6 +64,11 @@
 
 # File Handling
 - [Basics of File I/O](https://learn.microsoft.com/en-us/troubleshoot/developer/visualstudio/csharp/language-compilers/file-io-operation)
+- **System.IO** namespace provides four classes that allow you to manipulate individual files, as well as interact with a machine directory structure.
+- The **Directory** and **File** directly extends System.Object and supports the creation, copying, moving and deletion of files using various static methods.
+    -  They only contain static methods and are never instantiated.
+- The **FileInfo** and **DirectoryInfo** types are derived from the abstract class **FileSystemInfo** type and they are typically, employed for obtaining the full details of a file or directory because their members tend to return strongly typed objects.
+    - They implement roughly the same public methods as a Directory and a File but they are stateful and the members of these classes are not static.
 # Exceptions
 - An exception is an event that occurs during the execution of a program that distrupts the normal flow of instructions
     - Horrible to encounter when presenting your program (When it is expected to work perfectly fine)
@@ -114,7 +119,7 @@ dotnet add package Serilog.Sinks.File
 2. create a Logger using LoggerConfiguration class provided by Serilog
 3. Start logging!
 
-## [Garbage Collection](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals)
+
 # References:
 - [Practise Regular Expressions Basics](https://www.codecademy.com/learn/introduction-to-regular-expressions)
 - [File Handling overview](https://learn.microsoft.com/en-us/dotnet/standard/io/)

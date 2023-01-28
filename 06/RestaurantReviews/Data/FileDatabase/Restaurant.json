@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "Name": "Mc Donalds",
+    "OpenTime": "7:00",
+    "CloseTime": "21:00",
+    "Phone": null,
+    "Email": "contactus@macdonalds.in",
+    "Website": "https://mcdonalds.in",
+    "ZipCode": "600130"
+  },
+  {
+    "Id": 1,
+    "Name": "Taco Bell",
+    "OpenTime": "10:00 AM",
+    "CloseTime": "11:00 PM",
+    "Phone": "9876543210",
+    "Email": "contact@tacobell.com",
+    "Website": "https:tacobell.com",
+    "ZipCode": "600130"
+  },
+  {
+    "Id": 1,
+    "Name": "Taco Bell",
+    "OpenTime": "10:00 AM",
+    "CloseTime": "11:00 PM",
+    "Phone": "9876543210",
+    "Email": "contact@tacobell.com",
+    "Website": "https:tacobell.com",
+    "ZipCode": "600130"
+  },
+  {
+    "Id": 5,
+    "Name": "Dominos",
+    "OpenTime": "11:00 AM",
+    "CloseTime": "01:00 AM",
+    "Phone": "9876543210",
+    "Email": "contact@dominos.com",
+    "Website": "https:dominos.com",
+    "ZipCode": "600130"
+  },
+  {
+    "Id": 5,
+    "Name": "Chipotle",
+    "OpenTime": null,
+    "CloseTime": null,
+    "Phone": null,
+    "Email": null,
+    "Website": null,
+    "ZipCode": "250110"
+  },
+  {
+    "Id": 5,
+    "Name": "Chipotle",
+    "OpenTime": null,
+    "CloseTime": null,
+    "Phone": null,
+    "Email": null,
+    "Website": null,
+    "ZipCode": "250110"
+  },
+  {
+    "Id": 9,
+    "Name": "Udippi",
+    "OpenTime": null,
+    "CloseTime": null,
+    "Phone": null,
+    "Email": null,
+    "Website": null,
+    "ZipCode": "250110"
+  },
+  {
+    "Id": 11,
+    "Name": "KFC",
+    "OpenTime": "8:00 AM",
+    "CloseTime": "11:00 PM",
+    "Phone": "9988776655",
+    "Email": "contact@kfc.com",
+    "Website": null,
+    "ZipCode": "501101"
+  }
+]
