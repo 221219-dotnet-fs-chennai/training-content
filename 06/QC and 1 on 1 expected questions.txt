@@ -1,0 +1,41 @@
+Testing
+What is the importance of Testing?
+What are different Types of Testing?
+What is Unit testing?
+What are the 3 phases of Unit testing? 3As
+What is NUnit?
+What is meant by TestFixture and TestClass
+
+
+SOA
+What is Service Oriented Architecture? Why is it needed?
+What are principles of SOA?
+What are 2 implementations of SOA?
+How do you create a RESTful Api in Asp.Net?
+What are the most common HTTP methods and what are they used for?
+HTTP headers: content type header vs accept header
+What does idempotent verb mean?
+What does it mean for an HTTP method to be safe?
+What is hypermedia? What is HATEOS?
+What are some of the design principles of REST?
+What are the five categories of HTTP status codes?
+What are some differences between REST and SOAP.
+What are the motivations service-oriented architecture?
+What are different principles of REST?
+What is URI?
+
+
+EF
+What is O/RM?
+What is Entity Framework?
+Explain the advantages of the Entity Framework.
+What are different types of Entity framework approaches?
+Which according to you is considered the best approach in Entity Framework?
+What is a DbContext class?
+What are Entities?
+What is a connection string?
+What is a Repository Design pattern?
+What is meant by Separation of Concerns?
+What are POCO classes?
+What C# Datatype is mapped with which Datatype in SQL Server?
+What is DbSet?
