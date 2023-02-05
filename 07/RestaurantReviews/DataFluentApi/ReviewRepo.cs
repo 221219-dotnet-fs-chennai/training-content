@@ -19,6 +19,8 @@ namespace DataFluentApi
             _context.Reviews.Add(
                 new Review()
                 {
+                    //task 2
+                    // write code to add overall rating as average of taste, ambience and service rating
                     RestaurantId = restaurant.Id,
                     AmbienceRating = review.AmbienceRating,
                     Comment = review.Comment,
@@ -30,7 +32,7 @@ namespace DataFluentApi
             _context.SaveChanges();
             return review;
         }
-
+        // task 3 - create the get Reviews Action in a way that it also shows average rating in the JSON without making any change to DB
         public List<Review> GetReviews(Entities.Restaurant restaurant)
         {
             return _context.Reviews.Where(x=>x.RestaurantId == restaurant.Id).ToList();

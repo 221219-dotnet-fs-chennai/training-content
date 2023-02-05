@@ -1,7 +1,9 @@
 ﻿using BusinessLogic;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Caching.Memory;
 using Models;
 
 namespace Service.Controllers
@@ -11,20 +13,33 @@ namespace Service.Controllers
     public class RestaurantsController : ControllerBase // controllerbase class has all methods and properties to handle HTTP Requests/responses
     {
         IRestaurantLogic _logic;
-        public RestaurantsController(IRestaurantLogic logic)
+        IMemoryCache _cache;
+        public RestaurantsController(IRestaurantLogic logic, IMemoryCache cache)
         {
             _logic = logic;
+            _cache = cache;
+        }
+        // By default Aps.Net core supports text/plain as well as application/json
+        [HttpGet]
+        //[EnableCors("policy1")]
+        public string GetString()
+        {
+            return "Hello world";
         }
         [HttpGet("all")]
+       // [EnableCors("policy2")]
         public ActionResult Get()
         {
             try
             {
-                var restaurants = _logic.GetRestaurants();
-                if (restaurants.Count() > 0)
-                    return Ok(restaurants);
-                else
-                    return BadRequest("Seems like your database donot have records for Restaurant Table");
+                var listOfRestaurants = new List<Restaurant>();
+                //TryGetValue(checks if cahce still exists and if it does "out listOfrestautrants" puts that that inside our variable)
+                if (!_cache.TryGetValue("rest", out listOfRestaurants))
+                {
+                    listOfRestaurants = _logic.GetRestaurants().ToList();
+                    _cache.Set("rest", listOfRestaurants, new TimeSpan(0,0,30));                   
+                }
+                return Ok(listOfRestaurants);                
             }
             catch (SqlException ex)
             {

@@ -29,5 +29,11 @@ namespace Service.Controllers
 
         //task 
         //implement the getReviews 
+        [HttpGet]
+        public ActionResult Get(int restaurantId) 
+        {
+            var restaurantSearchedById = _restaurantLogic.GetRestaurantsById(restaurantId);
+            return Ok(_reviewLogic.GetReviews(restaurantSearchedById));
+        }
     }
 }

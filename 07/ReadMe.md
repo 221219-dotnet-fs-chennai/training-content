@@ -96,9 +96,76 @@
     * It can check what http request the client needs to give to make it work and so on
 * Really useful debugging tool for our api
 
-## ASP.NET Caching
+## [ASP.NET Caching](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/overview?view=aspnetcore-7.0)
 * Storing information in your app and just recalling that information rather than doing another operation on your database
 * Useful if you expect to use that information multiple times to do a single operation
 * Useful if your function does a complex sql operation to get that data that takes time and to store that information to call on instead
 * Might cause problems if database gets updated and using the cache information will be outdated
+- In Asp.Net Core Web Api you can cache using:
+    - In memory caches aka sticky sessions
+    - Distributed Caches using Sql Server - Redis Caches, NCache.
 
+## [Content Negotiation](https://learn.microsoft.com/en-us/aspnet/core/web-api/advanced/formatting?view=aspnetcore-7.0)
+- Whenever client request for a format of data using Accept header, this is called content Negotiation.
+- By Default Asp.Net core offers Json data unless configured.By default, ASP.NET Core supports the following media types:
+    - `application/json`
+    - `text/json`
+    - `text/plain`
+- Some browsers also have default accept header like edge and IE requests for JSON.
+- Or use Formatter custom or default
+    - Add XML format support
+        - `builder.Services.AddControllers().AddXmlSerializerFormatters();`
+## [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0)
+- **C**ross **O**rigin **R**equest **S**haring - is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+- Browser security prevents a web page from making requests to a different domain than the one that served the web page. 
+- This restriction is called the same-origin policy. 
+- These two URLs have the same origin:
+    - `https://example.com/foo.html`
+    - `https://example.com/bar.html`
+- These URLs have different origins than the previous two URLs:
+    - `https://example.net: Different domain`
+    - `https://www.example.com/foo.html: Different subdomain`
+    - `http://example.com/foo.html: Different scheme`
+    - `https://example.com:9000/foo.html: Different port`
+- There are three ways to enable CORS:
+    - In middleware using a named policy or default policy.
+    - Using endpoint routing - for minimal apis, what we covered and learned in this training is Controller based apis.
+    - With the [EnableCors] attribute.
+- Microsoft recommends: Using the [EnableCors] attribute with a named policy provides the finest control in limiting endpoints that support CORS.
+
+# Cloud Services
+## What is a cloud?
+- Its just another computer which is hidden from the consumer which is accessed via internet
+## Why cloud services are required these days?
+- On -premise (Physical infra - land, loaction, machines, ACs, Wires, Sys Admin team etc...)
+- High investment cost in terms of onpprem setup
+- High maintainence cost as well
+- Heavy staff responsibilities
+- cloud vs on-premise pros and cons read [here](https://www.morefield.com/blog/on-premises-vs-cloud/)
+## Different types of [cloud models](https://www.chapter247.com/blog/what-is-cloud-computing-types-of-cloud-computing/)
+- public 
+- private
+- Hybrid 
+- multi-cloud 
+
+## [Different types of cloud services](https://www.ibm.com/in-en/topics/iaas-paas-saas)
+- IAAS - Infrastructure As A Service
+- PAAS - Platform As A Service
+- SAAS - Software As A Service
+- DAAS - Data As A Service
+- XAAS - Anything As A Service
+
+## Deploying Asp.Net core web api to Azure
+- [Article](https://aspnetcore.readthedocs.io/en/stable/tutorials/publish-to-azure-webapp-using-vs.html)
+    - Not all steps are exactly how I showed but you can get a brief glimpse of it reading this article.
+- [Another one from Microsoft](https://learn.microsoft.com/en-us/aspnet/core/tutorials/publish-to-azure-webapp-using-vs?view=aspnetcore-7.0)
+
+# References
+- [Asp.Net core Fundamentals - Understand asp.net core project structure, different files](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-7.0&tabs=windows)
+- [Minimal APIs](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/overview?view=aspnetcore-7.0)
+- [Error Handling](https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors?view=aspnetcore-7.0)
+- [Open API and Swagger](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-7.0)
+- [Get some more basics of asp.net core web api unit testing](https://www.youtube.com/watch?v=YxXf9Tc-Kj4)
+    - this is video series using xUnit so you can understand the concept from here and implement in NUnit if you want
+- [NUnit with Moq](https://www.infolytx.com/nunit-and-moq/)
+    - I couldn't cover it in interest of time, but read it thoroughly and try to implement this into your project.
