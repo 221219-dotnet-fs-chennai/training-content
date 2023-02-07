@@ -1,0 +1,54 @@
+
+
+
+Agenda :
+
+- Operators ( ?,??)- Null coleascing operator
+- Big O notation (Algorithm)
+- Singleton design pattern
+- Evolution of web application
+* CA
+* Window application
+* Web application
+=> Web forms ( 3 - tier architecture)
+=> ASP.NET Core MVC - Request lifecycle
+=> ASP.NET CORE MVC 
+- Minimal API
+- Factory design pattern
+* Middleware 
+- HTTP Status codes 
+
+Operator :
+-  ? : initialize the null values in your application
+- ?? : Null coalescing operator
+
+check if the value exist or not 
+
+
+p ?? q
+
+p = left hand operand
+q = right hand operand
+
+
+if p is null,then q will be assigned
+
+Big O Notation :
+
+- Time complexity - time required to complete the task
+- Space complexity - memory space required to hold the resource
+
+O(1)
+O(n)
+O(log n)
+O(n2)
+
+Input  ---- > Process(Big O notation) ----> output 
+
+Singleton design pattern :
+
+- "Single instance"
+
+
+
+

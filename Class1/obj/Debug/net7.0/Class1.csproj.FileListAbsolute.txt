@@ -1,0 +1,15 @@
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\bin\Debug\net7.0\Class1.exe
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\bin\Debug\net7.0\Class1.deps.json
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\bin\Debug\net7.0\Class1.runtimeconfig.json
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\bin\Debug\net7.0\Class1.dll
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\bin\Debug\net7.0\Class1.pdb
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.csproj.AssemblyReference.cache
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.AssemblyInfoInputs.cache
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.AssemblyInfo.cs
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.csproj.CoreCompileInputs.cache
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.dll
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\refint\Class1.dll
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.pdb
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\Class1.genruntimeconfig.cache
+C:\Users\JeniferY\Desktop\MSatak\Class1\Class1\obj\Debug\net7.0\ref\Class1.dll
