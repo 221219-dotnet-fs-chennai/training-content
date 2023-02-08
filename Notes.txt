@@ -1,0 +1,261 @@
+
+
+
+Agenda :
+
+- Minimal Api
+- Factory design pattern
+- XUnit testing
+- Moq testing
+
+
+
+Minimal Api:
+
+- Create an Http Api with minimal dependency
+- No controller,No model folder,No validation,No external Database connection (sql,nosql..mongo)
+- No design pattern
+- No testing
+- No filters
+- No form binding 
+
+
+Step 1 :
+
+- open the asp.net core web api (uncheck the use controllers)
+
+
+Step 2 : Program.cs ( Create a class for data model and context)
+
+class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int price { get; set; }
+}
+
+class ProductContext : DbContext
+{
+    public ProductContext(DbContextOptions options) : base(options)
+    {
+    }
+    public DbSet<Product> Products { get; set; }
+}
+
+
+step 3 : Install the package for in memory database
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.InMemory
+
+step 4 : Configure the dependency
+
+builder.Services.AddDbContext<ProductContext>(options =>
+options.UseInMemoryDatabase("ProductList"));
+
+Step 5 : Configure the HTTP Verbs(get,put,post,delete)
+
+app.MapGet("/", () => "Hello world");
+app.MapGet("/products/complete", async (ProductContext pc) =>
+await pc.Products.ToListAsync());
+app.MapGet("/products/{id}", async (int id, ProductContext pc) =>
+await pc.Products.FindAsync(id));
+app.MapPost("/products", async (Product p, ProductContext pc) =>
+{
+    pc.Products.Add(p);
+    await pc.SaveChangesAsync();
+
+});
+
+app.MapPut("/product/{id}", async (int id, Product p, ProductContext pc) =>
+{
+    var ids = await pc.Products.FindAsync(id);
+    if (ids is null) return Results.NotFound();
+    ids.Name = p.Name;
+    ids.price = p.price;
+    await pc.SaveChangesAsync();
+    return Results.NoContent();
+    
+});
+
+app.MapDelete("/product/{id}", async (int id ,ProductContext pc) =>
+{
+    if(await pc.Products.FindAsync(id) is Product p)
+    {
+        pc.Products.Remove(p);
+        await pc.SaveChangesAsync();
+        return Results.Ok(p);
+    }
+    return Results.NotFound();
+});
+
+
+
+Step 6 : Run the application 
+
+
+
+Factory design pattern :
+
+- creational design pattern that handles the request "WITHOUT EXPOSING THE CREATION LOGIC TO THE CLIENT"
+
+
+Step 1 :
+
+- create a asp.net core web api (check the controller)
+
+Step 2 :
+
+- Create a model folder 
+
+* Interface
+
+public interface IStreamService
+    {
+        string[] ShowMovies();
+    }
+
+* 3 classes
+
+public class AmazonStreamServices : IStreamService
+    {
+        public string[] ShowMovies()
+        {
+            return new string[]
+            {
+                "Wakanda forever",
+                "Veera simha reddy",
+                "Master"
+            };
+        }
+    }
+
+
+    public class NetflixStreamService : IStreamService
+    {
+        public string[] ShowMovies()
+        {
+            return new string[]
+            {
+                "Avatar 2",
+                "Inception"
+            };
+        }
+    }
+
+    public class NoStreaming : IStreamService
+    {
+        public string[] ShowMovies()
+        {
+
+            return new string[]
+            {
+                "No new movies streaming",
+                "Rent movies at Rs.150"
+            };
+        }
+    }
+
+
+    Step 3 : Create a factory class
+
+    - Create a streamfactory class that resolves dependency at run time
+
+    public IStreamService GetStreamService(string userchoice)
+        {
+            if(userchoice=="netflix")
+            {
+                return new NetflixStreamService();
+            }
+            else if(userchoice=="amazon")
+            {
+                return new AmazonStreamServices();
+            }
+            else
+            {
+                return new NoStreaming();
+            }
+        }
+
+        Step 4 : Configure the controller
+
+        public class StreamController : ControllerBase
+    {
+        private readonly StreamFactory streamFactory;
+        public StreamController(StreamFactory streamFactory)
+        {
+            this.streamFactory = streamFactory;
+        }
+
+        [HttpGet("movies/{userchoice}")]
+        public IEnumerable<string> GetMovies(string userchoice)
+        {
+            return streamFactory.GetStreamService(userchoice).ShowMovies();
+        }
+    }
+
+    Step 5 :
+
+    builder.Services.AddScoped<StreamFactory>();
+builder.Services.AddScoped<NetflixStreamService>().AddScoped
+    <IStreamService,NetflixStreamService> (s => s.GetService<NetflixStreamService>());
+builder.Services.AddScoped<AmazonStreamServices>().AddScoped
+    <IStreamService,AmazonStreamServices>(s => s.GetService<AmazonStreamServices>());
+
+
+    Step 6 : Run the application 
+
+
+    XUnit Testing :
+
+    - Unit testing tool that tests for smaller components
+    - free and open source tool
+    - Include the test project and configure the test cases
+    - Nunit,MSTest(other testing tools)
+
+     public class UnitTest1
+    {
+        // [Fact] - 1 test case
+
+        //multiple test cases
+        [Theory]
+        [InlineData(1,"Jeni")]   //pass
+        [InlineData(2, "Kaveri")]  //fail
+        [InlineData(3, "Kaveri")]  //fail
+        [InlineData(1, "Mitra")]   //fail
+
+        public void Test1(int id,string name)
+        {
+
+            //Arrange - set up the environment for testing
+
+            SimpletestController sc = new SimpletestController();
+
+            // Act - Create the test case
+            string result = sc.check(id);
+
+            //Assert - If the actual output = expected output
+
+            Assert.Equal(result, name);
+
+
+
+        }
+    }
+
+    MOQ :
+
+    - It is a library and is used for mocking purpose
+    - Test with "Dummy data"
+
+    Moq testing steps :
+
+    Step 1 : XUnit test project
+
+    Step2 : Install the MOQ package
+
+    Step 3 : Create dummy data
+     
+    Step 4 : Test the data with the services
+
+    Step 5 : Run the test cases
