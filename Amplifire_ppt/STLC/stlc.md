@@ -62,17 +62,15 @@
       -   The requirement document should be available.
       -   Complete understanding of the application flow is required.
       -   The Test Plan Document should be ready.
-<<<<<<< HEAD
 - For Instance, to conclude the Test Cases development phase following expectations should be met :
      - Test Cases should be written and reviewed.
      -   Test Data should be identified and ready.
      -   Test automation script should be ready if applicable.
-=======
 - For Instance, to conclude the Test Cases development phase, following expectations should be met :
-      -  Test Cases should be written and reviewed.
-      -  Test Data should be identified and ready.
-      -  Test automation script should be ready if applicable.
->>>>>>> 7f1e54e411f61d904699f5e7e589eb941061ac9d
+     -  Test Cases should be written and reviewed.
+     -  Test Data should be identified and ready.
+     -  Test automation script should be ready if applicable.
+
 
 ## Conclusion
 - Overall, STLC helps to ensure that the software product is thoroughly tested and meets the quality standards before its release to the market.
