@@ -1,0 +1,101 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    width:100%;
+    height:100vh;
+    background-color:bisque;
+}
+
+.container
+{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction: row;
+}
+.notes_sidebar
+{
+    width:400px;
+    height:100vh;
+    border-right:2px solid #CCC;
+    padding:50px;
+}
+.pic
+{
+    width:10px;
+    height:50px;
+    border-right:2px solid #CCC;
+    padding:50px;
+    
+
+}
+.notes_sidebar input{
+    width:100%;
+    margin-bottom: 10px;
+    height:20px;
+    font-size: 10px;
+    padding:10px;
+}
+.notes_sidebar textarea{
+    width:100%;
+    margin-bottom:10px;
+    font-size: 10px;
+    padding:10px;
+    max-width: 100%;
+}
+
+.notes_sidebar button{
+    margin-bottom: 10px;
+    outline:none;
+    border:none;
+    background-color: black;
+    color:#FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+.notes_container
+{
+    width:100%;
+    padding:50px;
+    flex:1;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.note{
+    background-color: #EEE;
+    padding:30px;
+    width:25%;
+    max-height:200px;
+    overflow: scroll;
+    margin-right: 10px;
+
+}
+.note h3{
+   overflow: hidden;
+   margin-bottom: 10px; 
+}
+
+.note p{
+    margin-bottom: 10px;
+    font-size: 13px;
+    
+}
+button.btn-save
+{
+    background-color: rgb(8, 8, 14);
+}
+button.btn_delete
+{
+    background-color: #f44336;
+}
+.hidden
+{
+    display:none;
+}
