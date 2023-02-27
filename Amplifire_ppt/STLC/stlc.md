@@ -62,7 +62,7 @@
       -   The requirement document should be available.
       -   Complete understanding of the application flow is required.
       -   The Test Plan Document should be ready.
-- For Instance, to conclude the Test Cases development phase, following expectations should be met −
+- For Instance, to conclude the Test Cases development phase, following expectations should be met :
       -  Test Cases should be written and reviewed.
       -  Test Data should be identified and ready.
       -  Test automation script should be ready if applicable.
