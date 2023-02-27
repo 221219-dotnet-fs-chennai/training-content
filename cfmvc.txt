@@ -1,0 +1,66 @@
+Code first approach
+
+Template : asp.net core web application(model-view-controller)
+
+
+Step 1: Install packages
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.tools
+Microsoft.EntityFrameworkCore.sqlserver
+Microsoft.visualstudio.web.codegeneration.design
+
+Step 2 : Create a model class movies.cs
+
+
+public class Movies
+    {
+        public int Mid { get; set; }
+        public string Mname { get; set; }
+        public string Director { get; set; }
+        public int TicketPrice { get; set; }
+
+    }
+
+step 3: configure the connection (appsettings.json)
+
+"ConnectionStrings": {
+    "MovieConnection": "Data Source=REV-PG02C4Y5;Initial Catalog=Rev;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False"
+  },
+
+
+step 4 : configure the context class
+
+DbContext : establish the database connection
+Dbset : Refers to data table
+
+ public class MovieContext : DbContext
+    {
+        public MovieContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        public DbSet<Movies> movie { get; set; }
+    }
+
+Step 5 : Program.cs (adding dependencies to the middleware)
+
+builder.Services.AddDbContext<MovieContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("MovieConnection")));
+
+Step 6 : Migration commands 
+
+add-migration 'create'
+update-database
+
+Step 7 : Build the application and Scaffold the controller /view 
+
+Step 8 : Run the application for CRUD
+
+
+
+
+
+
+
+

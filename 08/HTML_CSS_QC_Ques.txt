@@ -1,0 +1,55 @@
+HTML 
+
+What is HTML? 
+
+What is the HTML5 doctype declaration? 
+
+List some tags. What is <head> used for? <body>? 
+
+What are the required tags for an HTML document? 
+
+What is the tag for ordered list? unordered list? Change bullet styling? 
+
+What features came with HTML5? Are HTML 5 tags different from other tags? 
+
+Do all tags come in a pair? List a self-closing tag. 
+
+What’s the difference between an element and an attribute? List some global attributes. 
+
+What is the syntax for a comment in HTML? 
+
+What tags would you use to create a table? A navbar? What about a form? 
+
+What’s the difference between a class and id? 
+
+How would you include CSS into an HTML document? What about JS? 
+
+What is a semantic tag? What about formatting tags/elements? 
+
+What’s the difference between a block and an inline element? 
+
+!!!!!!!!!!!!!!!!!!!!!!CSS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+What is CSS? what are the different ways of styling an html file? 
+
+Which way has highest priority when styles cascade: inline, internal, and external stylesheets. Which is best practice? Why? 
+
+What are the different CSS selectors? Write the syntax for each. 
+
+What is a psuedo-class? What is the syntax for selecting that? 
+
+Write a CSS selector for styling all spans inside of a div. What about only targeting spans that are direct descendents of divs? 
+
+Can I select multiple elements at once with CSS? If so, what is the syntax? 
+
+Explain the concept of specificity and how it relates to styling conflicts 
+
+Explain the CSS box model 
+
+What features did CSS3 introduce? 
+
+What is Bootstrap? What are some bootstrap classes you can use? 
+
+How many columns make up the Bootstrap grid system? 
+
+What is a CDN? what are the benefits? When would you choose to use a CDN vs downloading and using the Bootstrap source code in your project?

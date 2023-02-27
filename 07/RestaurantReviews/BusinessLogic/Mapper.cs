@@ -76,7 +76,7 @@ namespace BusinessLogic
         //task
         public static IEnumerable<Models.Review> Map(IEnumerable<Data.Review> reviews)
         {
-            throw new NotImplementedException();
+            return reviews.Select(Map);
         }
         /// <summary>
         /// This method converts Models' Restaurant object to Entity Framework Restaurant Entity in DataLayer

@@ -20,9 +20,9 @@ namespace BusinessLogic
             return Mapper.Map(_repo.AddReview(Mapper.Map(restaurant),Mapper.Map(review)));
         }
 
-        public List<Review> GetReviews(Restaurant restaurant)
+        public IEnumerable<Review> GetReviews(Restaurant restaurant)
         {
-            throw new NotImplementedException();
+            return Mapper.Map(_repo.GetReviews(Mapper.Map(restaurant)));
         }
     }
 }

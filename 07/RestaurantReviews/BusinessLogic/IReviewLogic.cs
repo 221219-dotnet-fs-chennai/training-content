@@ -5,6 +5,6 @@ namespace BusinessLogic
     {
         
         Review AddReview(Restaurant restaurant,Review review);
-        List<Review> GetReviews(Restaurant restaurant);
+        IEnumerable<Review> GetReviews(Restaurant restaurant);
     }
 }

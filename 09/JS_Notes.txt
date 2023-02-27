@@ -1,0 +1,532 @@
+Javascript::
+
+	- high level
+	- Dynamic
+	- Dynamically typed (let , var)
+	- Weakly typed 
+	- Interpreted
+	- Multi-paradigm
+
+Javascipt version:
+
+	ES6
+	ES7
+	ECMASCRIPT2015
+
+	ECMASCRIPT2016....
+
+
+Including Script in html page
+
+	1. <script>  js commands </script>
+	2. Create a JS file with .js extension and in head
+	we can include external js with
+	<script src=""></script>
+
+Comments:
+	// single line comment
+	/*      */ Multi-line comment
+
+DOM::
+
+	JS can access all the elements in a webpage making use of DOM. 
+	DOM is created as atree of objects.
+
+				Document
+			
+				Root Element
+				<html>
+
+		Element				Element
+		<head>				<body>
+
+How to use DOM?
+	
+	getElementById: To access elements and attributes whose id is set alrady
+	innerHTML: To access the content of an element.
+	getElementsByTagName: To access elements and attributes using tag name.
+	This method will return an array of all the items with the same tag name.
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+
+        <p> This is the GetElement ByTagExample </p>
+        <p id="Second_Para">Thisis the Javascript DOM Example</p>
+       
+        <script>
+            var parent=document.getElementsByTagName("p");
+            alert("The second paragraph is " + parent[1].innerHTML);
+            document.getElementById("Second_Para").innerHTML="The original message got changed";
+        </script>
+    </body>
+</html>
+
+
+
+JS Variables:
+
+	We can declare a variable using "var".
+
+
+var name_="Mounika.B"
+
+var Name_="Mounika.V"
+
+Console.log(name_);
+Console.log(Name_);
+
+
+Array::
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+
+       
+        <script>
+          /* var Associates=["Rizwan","Abdul","Yugaraj"];
+           alert("These "+Associates[0]+" "+ Associates[1]+" "+Associates[2]+"are doing crazy things");
+           alert("Just for fun");
+           */
+
+           var Associates=new Array("Mahathi","Mounika","Yasaswini");
+
+           var ASsociates=new Array();
+
+           ASsociates[0]="Prasanna";
+           ASsociates[1]="Madhu";
+        </script>
+    </body>
+</html>
+
+
+Array Methods
+	
+	1. length property
+	2. Prototype property
+	3. reverse
+	4.sort
+	5. pop
+	6. shift
+	7.push
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+
+       
+        <script>
+            var Associates=new Array("Mahathi","Mounika","Yasaswini");
+            Array.prototype.displayItems=function()
+            {
+                for(i=0;i<this.length;i++)
+                {
+                    document.write(this[i]+"<br/>");
+                }
+            }
+            document.write("List of the Associates<br>");
+            Associates.displayItems();
+
+            Associates.sort();
+            document.write("List of the Associates<br>");
+            Associates.displayItems();
+
+            Associates.reverse();
+            document.write("List of the Associates<br>");
+            Associates.displayItems();
+
+            Associates.pop();
+            document.write("List of the Associates<br>");
+            Associates.displayItems();
+
+            Associates.shift();
+            document.write("List of the Associates<br>");
+            Associates.displayItems();
+
+            Associates.push("Kaveri");
+            document.write("List of the Associates<br>");
+            Associates.displayItems();
+
+         
+        </script>
+    </body>
+</html>
+
+Interaction with the browser:
+
+1.alert
+2. prompt
+3. confirm.
+
+<html>
+    <head>
+       
+    </head>
+    <body>
+
+       
+        <script>
+               //alert(100/0);     //infinity
+               //alert("Javascript"/10); //It will not throw an error, it is NaN Not a Number
+              // let age =null;
+               //alert(age);
+                /*
+               let name_assoc=prompt("Pls,enter your name");
+               if(name_assoc!= null)
+               {
+                alert(name_assoc+"Hello, Welcome");
+                
+               }
+               else
+               {
+                document.write("Next time !!!!!");
+               }*/
+
+               let isBoss=confirm("Are you the boss??");
+
+               alert(isBoss);
+
+
+        </script>
+    </body>
+</html>
+
+"??" Nullish coalescing operator ??
+
+
+a ?? b is if a is defined then a,
+	if a is undefined then b
+
+
+|| Or operator
+
+a || b it will for the first truthy value not for defined value.
+
+let number=0;
+             alert(number ?? 100);// return 0
+
+let number=0;
+             alert(number || 100);// return 100
+
+::: Functions ::
+
+alert, prompt , confirm
+
+function display(list of parametrs sep by comma)
+{
+
+
+}
+
+// local variable::declared inside a function
+//outer variable:: declared outside a function
+
+let userName="Srinu";
+
+             function showGreeting()
+             {
+                userName="Saiprasad";
+
+                let message="Hello,     "+ userName;
+                alert(message);
+             }
+
+             alert(userName);
+
+             showGreeting();
+             alert(userName);
+
+Variables declared outside are getting shadowed if it is accessed inside the function.
+
+let userName="Srinu";
+
+             function showGreeting()
+             {
+                userName="Saiprasad";
+
+                let message="Hello,     "+ userName;
+                alert(message);
+             }
+
+             alert(userName); // Srinu
+
+             showGreeting();// Hello Saiprasad
+             alert(userName); // saiprasad
+
+//Passing parameters
+
+function showGreeting(Sender,Message="How are you")
+             {
+              
+
+               
+                alert("* "+Sender+" : " +Message);
+               
+             }
+
+             
+
+             showGreeting("Venkat","Hello Aman What you doing!!!");
+             showGreeting("Venkat",undefined);
+
+
+// return a value
+
+ function checkAge(age) {
+                if (age >= 18) {
+                    return true;
+                } else {
+                    return confirm('Do you have permission from your parents?');
+                }
+                }
+
+                let age = prompt('How old are you?', 18);
+
+                if ( checkAge(age) ) {
+                alert( 'Access granted' );
+                } else {
+                alert( 'Access denied' );
+            }
+
+** It is possible to use return without a value. 
+That causes the function to exit immediately.
+
+ function checkAge(age) {
+                if (age >= 18) {
+                    return true;
+                } else {
+                    return confirm('Do you have permission from your parents?');
+                }
+                }
+            
+            
+            function showMovie(age) {
+                if ( !checkAge(age) ) {
+                    return;
+                }
+
+                alert( "Showing you the movie" ); // (*)
+                // ...
+                }
+                let age = prompt('How old are you?', 0);
+                showMovie(age);  
+
+
+!!! Arrow Functions !!!!
+
+	 let age=prompt("What is your age?",18);
+
+        let welcome=(age < 18 ) ? 
+        () => alert('Hello !'):
+        () => alert("Greetings!");
+
+        welcome();
+
+We can use Arrow Functions in the same way as Function expressions
+
+
+!!! Multiline arrow functions !!!
+
+// return should be there explicitely
+
+
+
+let product=(n1,n2) =>
+            {
+                let res= n1 * n2;
+                return res;
+
+            }
+
+            alert( product ( 10,30) );
+
+!!! Strict mode !!!
+
+
+'Use strict';
+
+Object:
+
+let Associate={
+	name:"Manikandan",
+	age:20,
+	Interested in Sports:true
+	
+};
+// leads to an error.. To overcome this we have to specify like
+
+  let Associate={
+                name:"Manikandan",
+                age:20,
+                "Interested in Sports":true
+                    
+            };
+            alert(Associate["Interested in Sports"]);
+
+// If we want to check whether the key is there in the object we have to use in operator
+
+alert("age" in Associate); // return true
+
+
+!!!  for in loop
+
+ let Associate={
+                name:"Manikandan",
+                age:20,
+                "Interested in Sports":true
+                    
+            };
+
+            for(let key in Associate)
+            {
+                alert(key);
+
+                alert(Associate[key]);
+
+            }
+
+let a={};
+let b=a;// copy the reference
+let c={};
+alert( a== b);// true
+alert(a===b); // true
+alert(a==c);// false
+alert(a===c);
+
+// copies all properties from permission 1 and permission2 into associate..
+
+ let associate={name:"Raghu"};
+
+                let accesspermission1={canView:true};
+                let accesspermission2={canEdit:true};
+
+
+                Object.assign(associate,accesspermission1,accesspermission2);
+
+                alert(associate.name);
+                alert(associate.canEdit);
+                alert(associate.canView);
+
+!!! Constructor function !!!
+
+function Associate(name)
+                {
+                    this.name=name;
+                    this.isActive=false;
+
+                }
+                let associate=new Associate("Solu");
+                alert(associate.name);
+                alert(associate.isActive);
+
+
+When a function is executed with new, it does the following steps:
+
+1. A new empty object is created and assigned to this.
+2. The function body executes. Usually it modifies this, adds new properties to it.
+3. The value of this is returned.
+
+Constructor functions or, briefly, constructors, are regular functions, but there’s a common agreement to name them with capital letter first.
+Constructor functions should only be called using new. Such a call implies a creation of empty this at the start and returning the populated one at the end.
+We can use constructor functions to make multiple similar objects.
+
+!!! Date and Time !!!
+
+- Date and time in JavaScript are represented with the Date object. We can’t create “only date” or “only time”: Date objects always carry both.
+- Months are counted from zero (yes, January is a zero month).
+- Days of week in getDay() are also counted from zero (that’s Sunday).
+- Date auto-corrects itself when out-of-range components are set. Good for adding/subtracting days/months/hours.
+- Dates can be subtracted, giving their difference in milliseconds. That’s because a Date becomes the timestamp when converted to a number.
+- Use Date.now() to get the current timestamp fast.
+
+  /*  
+            // current date
+            let date = new Date();
+
+            // the hour in your current time zone
+            alert( date.getHours() );
+            
+
+            // the hour in UTC+0 time zone (London time without daylight savings)
+            alert( date.getUTCHours() );
+
+            let today = new Date();
+
+            today.setHours(0);
+            alert(today); // still today, but the hour is changed to 0
+
+            today.setHours(0, 0, 0, 0);
+            alert(today); // still today, now 00:00:00 sharp
+
+            //autocorrection
+
+            let date1= new Date(2016, 1, 28);
+            date1.setDate(date1.getDate() + 2);
+            alert( date1 ); // 1 Mar 2016
+            /* The method Date.parse(str) can read a date from a string.
+
+                The string format should be: YYYY-MM-DDTHH:mm:ss.sssZ
+                The call to Date.parse(str) parses the string in the given format and returns the timestamp 
+                (number of milliseconds from 1 Jan 1970 UTC+0). If the format is invalid, returns NaN.*/
+          let date2 = new Date( Date.parse('2012-03-26T13:51:50.417-07:00') );
+            alert(date2.getMonth());
+
+!! JSON Methods , toJSON
+
+
+let asssociate={
+
+name:"Ajay"
+age:20,
+
+toString()
+{
+return `{name:"${this.name}",age:{this.age}}`;
+}
+};
+alert(associate);
+
+//Thi may be complex so in JS we will parse it using
+
+	- JSON.stringify -> objects into JSON
+	-JSON.parse -> JSON back to an object
+
+
+ /*
+          let asssociate={
+
+                    name:"Ajay",
+                    age:20,
+
+          };
+          let jsonob=JSON.stringify(asssociate);
+
+         alert(typeof jsonob);
+         alert(jsonob);
+
+            */
+           let numbers="[11,12,13,14]";
+           num=JSON.parse(numbers);
+           alert(num[1]);
+           alert(typeof(num));
+
+- JSON is a data format that has its own independent standard and libraries for most programming languages.
+- JSON supports plain objects, arrays, strings, numbers, booleans, and null.
+- JavaScript provides methods JSON.stringify to serialize into JSON and JSON.parse to read from JSON.
+- Both methods support transformer functions for smart reading/writing.
+- If an object has toJSON, then it is called by JSON.stringify.
+
+
+
+
+
+
+
+					

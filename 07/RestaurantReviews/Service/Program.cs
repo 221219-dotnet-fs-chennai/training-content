@@ -8,10 +8,42 @@ using DataFluentApi;
 // HOST - Server for the Asp.Net Api
 var builder = WebApplication.CreateBuilder(args);
 
+//Service to add cache
+builder.Services.AddMemoryCache();
 //SERVICES - injected by Dependency Injection
 // Add services to the container.
+builder.Services.AddControllers().AddXmlSerializerFormatters();
 
-builder.Services.AddControllers();
+// creating a policy which will allow any client from any domain to access this api using any header and any method
+builder.Services.AddCors(options =>
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        }
+        )
+    );
+
+/*var policy1 = "some policy";
+var policy2 = "some policy";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Policy1",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost.com",
+                                "https://127.0.0.0");
+        });
+
+    options.AddPolicy("policy2",
+        policy =>
+        {
+            policy.WithOrigins("https://azurewebsites.net")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});*/
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -44,6 +76,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//app.UseCors(policy1);
+app.UseCors();
 
 app.UseAuthorization();
 
